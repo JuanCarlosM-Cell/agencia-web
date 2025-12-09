@@ -7,7 +7,12 @@ export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  // Ref específico para la imagen (para activar el color al scrollear)
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [isImageInView, setIsImageInView] = useState(false);
+
   useEffect(() => {
+    // Observer general de la sección (texto)
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -23,6 +28,21 @@ export default function About() {
 
     return () => {
       if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Observer específico de la imagen (threshold 0.5 para que se "prenda" al centro)
+    const imgObserver = new IntersectionObserver(([entry]) => {
+      setIsImageInView(entry.isIntersecting);
+    }, { threshold: 0.5 });
+
+    if (imageRef.current) {
+      imgObserver.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) imgObserver.unobserve(imageRef.current);
     };
   }, []);
 
@@ -81,6 +101,7 @@ export default function About() {
 
         {/* COLUMNA DERECHA: IMAGEN EDITORIAL */}
         <div
+          ref={imageRef}
           className={`
             relative h-[700px] w-full overflow-hidden rounded-sm
             transition-all duration-[1.2s] delay-300 ease-out
@@ -91,7 +112,7 @@ export default function About() {
             src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=75&w=1200&auto=format&fit=crop"
             alt="Abstract Architecture"
             fill
-            className="object-cover transition-all duration-1000 ease-in-out grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0"
+            className={`object-cover transition-all duration-1000 ease-in-out ${isImageInView ? "grayscale-0" : "grayscale"} hover:grayscale-0`}
             tabIndex={0}
           />
 

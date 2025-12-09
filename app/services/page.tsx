@@ -63,41 +63,7 @@ export default function ServicesPage() {
             <section className="px-6 md:px-20 py-20 bg-black">
                 <div className="max-w-[1400px] mx-auto flex flex-col gap-32">
                     {allServices.map((service, index) => (
-                        <div key={service.id} className={`flex flex-col gap-12 text-center md:text-left ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-
-                            {/* IMAGEN DEL SERVICIO */}
-                            <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-sm overflow-hidden group">
-                                <Image
-                                    src={service.image}
-                                    alt={service.title}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0 group-active:grayscale-0 group-focus:grayscale-0"
-                                />
-                            </div>
-
-                            {/* CONTENIDO DEL SERVICIO */}
-                            <div className="w-full md:w-1/2 flex flex-col justify-center">
-                                <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
-                                    <span className="text-accent text-lg font-bold">0{service.id}</span>
-                                    <div className="h-[1px] w-12 bg-accent"></div>
-                                </div>
-
-                                <h2 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h2>
-                                <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                                    {service.description}
-                                </p>
-
-                                {/* Grid de Características */}
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {service.features.map((feature, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-300">
-                                            <span className="text-accent">✓</span> {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                        </div>
+                        <ServiceItem key={service.id} service={service} index={index} />
                     ))}
                 </div>
             </section>
@@ -112,5 +78,68 @@ export default function ServicesPage() {
 
             <Footer />
         </main>
+    );
+}
+
+// Componente individual para manejar la lógica de intersección por ítem
+import { useRef, useEffect, useState } from "react";
+
+function ServiceItem({ service, index }: { service: any; index: number }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.6 } // Se activa cuando el 60% del ítem está visible
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) observer.unobserve(ref.current);
+        };
+    }, []);
+
+    return (
+        <div ref={ref} className={`flex flex-col gap-12 text-center md:text-left ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+
+            {/* IMAGEN DEL SERVICIO */}
+            <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-sm overflow-hidden group">
+                <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className={`object-cover transition-transform duration-700 group-hover:scale-105 ${isInView ? "grayscale-0" : "grayscale"} hover:grayscale-0`}
+                />
+            </div>
+
+            {/* CONTENIDO DEL SERVICIO */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center">
+                <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
+                    <span className="text-accent text-lg font-bold">0{service.id}</span>
+                    <div className="h-[1px] w-12 bg-accent"></div>
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h2>
+                <p className="text-lg text-gray-400 leading-relaxed mb-8">
+                    {service.description}
+                </p>
+
+                {/* Grid de Características */}
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.features.map((feature: string, i: number) => (
+                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-300">
+                            <span className="text-accent">✓</span> {feature}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+        </div>
     );
 }
