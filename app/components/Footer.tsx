@@ -2,6 +2,7 @@
 
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import ContactForm from "./ContactForm";
+import Image from "next/image";
 
 export default function Footer() {
   const { ref, isVisible } = useScrollAnimation();
@@ -28,14 +29,15 @@ export default function Footer() {
       >
 
         {/* Columna 1 */}
-        <div>
-          <h3 className="text-3xl font-bold">TuAgencia</h3>
-          <div className="w-12 h-1 bg-accent mt-3 rounded-full"></div>
-
-          <p className="text-gray-400 mt-6 leading-relaxed max-w-sm">
-            Creamos experiencias que conectan personas con marcas a través de creatividad,
-            estrategia y tecnología.
-          </p>
+        <div className="flex flex-col items-center">
+          <div className="relative w-64 h-24 mb-6 mt-10">
+            <Image
+              src="/logo.png"
+              alt="Branding Emoción Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
 
         {/* Columna 2 */}

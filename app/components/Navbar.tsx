@@ -40,7 +40,7 @@ export default function Navbar({ forceWhite = false }: NavbarProps) {
         className={`
           fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out
           ${paddingClass}
-          ${showWhiteBg ? "bg-[#0B1121]/95 backdrop-blur-md shadow-sm" : "bg-transparent"}
+          ${"bg-[#0B1121]/95 backdrop-blur-md shadow-md"}
           text-white
         `}
       >

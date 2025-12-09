@@ -1,30 +1,7 @@
 "use client";
 
 import useScrollAnimation from "../hooks/useScrollAnimation";
-
-const tools = [
-  {
-    id: 1,
-    title: "Mis Leads",
-    icon: "📊",
-    description: "Gestión de oportunidades en tiempo real.",
-    action: "Ver Dashboard"
-  },
-  {
-    id: 2,
-    title: "Dominios",
-    icon: "🌐",
-    description: "Buscador y administrador de dominios.",
-    action: "Buscar Ahora"
-  },
-  {
-    id: 3,
-    title: "Soporte VIP",
-    icon: "💎",
-    description: "Línea directa con tu Project Manager.",
-    action: "Contactar"
-  }
-];
+import Image from "next/image";
 
 export default function Access() {
   const { ref, isVisible } = useScrollAnimation();
@@ -53,34 +30,98 @@ export default function Access() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {tools.map((tool, index) => (
-            <div
-              key={tool.id}
-              className={`
-                group relative bg-neutral-800/50 border border-white/10 p-10 
+          {/* CARD 1 */}
+          <div
+            className={`
+                group relative bg-neutral-800/50 border border-white/10 p-10
                 hover:border-accent hover:bg-neutral-800 transition-all duration-500 cursor-pointer
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
               `}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <div className="text-4xl mb-6 text-accent group-hover:scale-110 transition-transform duration-300">
-                {tool.icon}
-              </div>
-
-              <h4 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
-                {tool.title}
-              </h4>
-
-              <p className="text-gray-400 text-sm mb-8 leading-relaxed">
-                {tool.description}
-              </p>
-
-              <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
-                {tool.action}
-                <span className="transform group-hover:translate-x-2 transition-transform duration-300">→</span>
-              </div>
+            style={{ transitionDelay: "0ms" }}
+          >
+            <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60"
+                alt="Leads Dashboard"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+              />
             </div>
-          ))}
+            <h4 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
+              Mis Leads
+            </h4>
+            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+              Gestión de oportunidades en tiempo real.
+            </p>
+            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
+              Ver Dashboard
+              <span className="transform group-hover:translate-x-2 transition-transform duration-300">
+                →
+              </span>
+            </div>
+          </div>
+
+          {/* CARD 2 */}
+          <div
+            className={`
+                group relative bg-neutral-800/50 border border-white/10 p-10
+                hover:border-accent hover:bg-neutral-800 transition-all duration-500 cursor-pointer
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+              `}
+            style={{ transitionDelay: "150ms" }}
+          >
+            <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60"
+                alt="Global Domains"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+              />
+            </div>
+            <h4 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
+              Dominios
+            </h4>
+            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+              Buscador y administrador de dominios.
+            </p>
+            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
+              Buscar Ahora
+              <span className="transform group-hover:translate-x-2 transition-transform duration-300">
+                →
+              </span>
+            </div>
+          </div>
+
+          {/* CARD 3 */}
+          <div
+            className={`
+                group relative bg-neutral-800/50 border border-white/10 p-10
+                hover:border-accent hover:bg-neutral-800 transition-all duration-500 cursor-pointer
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+              `}
+            style={{ transitionDelay: "300ms" }}
+          >
+            <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=60"
+                alt="VIP Support"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+              />
+            </div>
+            <h4 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
+              Soporte VIP
+            </h4>
+            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+              Línea directa con tu Project Manager.
+            </p>
+            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
+              Contactar
+              <span className="transform group-hover:translate-x-2 transition-transform duration-300">
+                →
+              </span>
+            </div>
+          </div>
         </div>
 
       </div>
