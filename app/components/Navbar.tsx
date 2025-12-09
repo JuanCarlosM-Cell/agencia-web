@@ -82,7 +82,7 @@ export default function Navbar({ forceWhite = false }: NavbarProps) {
       <div
         className={`
           fixed inset-0 bg-white z-40 flex flex-col justify-center items-center gap-8
-          transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]
+          transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] text-black
           ${open ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}
         `}
       >
