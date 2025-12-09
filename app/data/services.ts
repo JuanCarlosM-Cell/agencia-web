@@ -1,52 +1,146 @@
 export const allServices = [
     {
         id: 1,
-        slug: "branding-identidad",
-        title: "Branding & Identidad",
-        description: "Creamos marcas con alma. Desde el logotipo hasta el sistema visual completo, definimos cómo se ve, habla y siente tu marca en cada punto de contacto.",
-        fullDescription: "En un mercado saturado, tu marca necesita destacar. No solo diseñamos logos, construimos identidades visuales completas que cuentan historias y conectan emocionalmente con tu audiencia. Nuestro proceso va desde la investigación de mercado hasta la entrega de un manual de marca exhaustivo que asegura la consistencia en todos los canales.",
+        slug: "branding-estrategia",
+        title: "Branding & Estrategia",
+        shortDescription: "Construimos identidades que no solo se ven, se sienten. Definimos el ADN de tu marca.",
         image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=75&w=1200&auto=format&fit=crop",
-        features: ["Logotipo & Isotipo", "Paleta de Colores", "Tipografía Corporativa", "Manual de Marca", "Papelería Corporativa", "Brandbook Digital"],
-        benefits: ["Diferenciación en el mercado", "Mayor reconocimiento de marca", "Confianza del consumidor", "Consistencia visual"]
+        features: [
+            "Manual de Identidad Corporativa",
+            "Estrategia de Comunicación",
+            "Naming & Verbal Identity",
+            "Arquitectura de Marca"
+        ],
+        longDescription: "Tu marca es más que un logo; es la promesa que haces a tus clientes y la experiencia que entregas. En nuestra agencia, profundizamos en el núcleo de tu negocio para extraer su esencia y traducirla en un sistema visual y estratégico coherente. Creamos marcas que respiran, hablan y conectan emocionalmente con su audiencia.",
+        benefits: [
+            "Diferenciación clara en un mercado saturado.",
+            "Mayor lealtad y reconocimiento de cliente.",
+            "Coherencia visual en todos los puntos de contacto.",
+            "Aumento del valor percibido de tus productos/servicios."
+        ],
+        process: [
+            { step: "01", title: "Inmersión", desc: "Auditoría profunda de tu mercado y competencia." },
+            { step: "02", title: "Estrategia", desc: "Definición del propósito, valores y personalidad." },
+            { step: "03", title: "Diseño", desc: "Creación del sistema visual y activos gráficos." },
+            { step: "04", title: "Entrega", desc: "Manual de marca y guías de implementación." }
+        ],
+        stats: [
+            { value: "+40%", label: "Reconocimiento de Marca" },
+            { value: "3X", label: "Valor Percibido" },
+            { value: "100%", label: "Coherencia Visual" }
+        ],
+        gallery: [
+            { image: "https://images.unsplash.com/photo-1558655146-9f90138f7fe6?w=800&q=80", title: "Rebranding Tech", category: "Identidad" },
+            { image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80", title: "Minimalist Pack", category: "Packaging" },
+            { image: "https://images.unsplash.com/photo-1586717791821-3f44a5638d48?w=800&q=80", title: "Corporate System", category: "Papelería" }
+        ]
     },
     {
         id: 2,
         slug: "diseno-web-ui-ux",
-        title: "Diseño Web UI/UX",
-        description: "Diseñamos interfaces que enamoran y funcionan. Priorizamos la experiencia de usuario para garantizar navegación intuitiva y altos índices de conversión.",
-        fullDescription: "Tu sitio web es tu oficina digital abierta 24/7. Creamos experiencias digitales centradas en el usuario que no solo son visualmente impactantes, sino que están optimizadas para la conversión. Utilizamos las últimas tecnologías y principios de diseño UX/UI para guiar al usuario hacia la acción deseada sin fricciones.",
+        title: "Diseño Web & UX/UI",
+        shortDescription: "Experiencias digitales fluidas, rápidas y diseñadas para convertir visitantes en fans.",
         image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=75&w=1200&auto=format&fit=crop",
-        features: ["Diseño Web Responsivo", "Prototipado Interactivo", "Auditoría UX", "Sistemas de Diseño", "Landing Pages", "Dashboards"],
-        benefits: ["Mejor tasa de conversión", "Menor tasa de rebote", "Navegación intuitiva", "Accesibilidad mejorada"]
+        features: [
+            "Diseño de Interfaz (UI)",
+            "Experiencia de Usuario (UX)",
+            "Desarrollo Full-Stack",
+            "E-commerce & Landing Pages"
+        ],
+        longDescription: "No solo hacemos sitios web bonitos; creamos máquinas de conversión digital. Tu sitio web es tu vendedor 24/7, y nos aseguramos de que esté vestido para el éxito. Priorizamos la velocidad, la accesibilidad y una arquitectura de información intuitiva que guía al usuario suavemente hacia la acción deseada.",
+        benefits: [
+            "Velocidad de carga optimizada para SEO.",
+            "Diseño responsive perfecto en cualquier dispositivo.",
+            "Arquitectura diseñada para la conversión.",
+            "Tecnologías modernas y escalables."
+        ],
+        process: [
+            { step: "01", title: "UX Research", desc: "Investigación de usuarios y wireframes." },
+            { step: "02", title: "UI Design", desc: "Diseño visual de alta fidelidad y prototipos." },
+            { step: "03", title: "Desarrollo", desc: "Código limpio, rápido y optimizado." },
+            { step: "04", title: "Launch", desc: "Pruebas QA, SEO on-page y lanzamiento." }
+        ],
+        stats: [
+            { value: "<2s", label: "Tiempo de Carga" },
+            { value: "+200%", label: "Tasa de Conversión" },
+            { value: "98", label: "Puntuación SEO" }
+        ],
+        gallery: [
+            { image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80", title: "SaaS Dashboard", category: "Plataforma" },
+            { image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80", title: "E-commerce Moda", category: "Tienda Online" },
+            { image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf7d?w=800&q=80", title: "Corporate Site", category: "Web Corporativa" }
+        ]
     },
     {
         id: 3,
-        slug: "estrategia-digital",
-        title: "Estrategia Digital",
-        description: "No solo publicamos, conectamos. Desarrollamos estrategias de contenido y campañas de pago para poner tu marca frente a las personas correctas.",
-        fullDescription: "El marketing digital no es solo publicar en redes sociales. Es entender a tu audiencia y entregar el mensaje correcto en el momento adecuado. Diseñamos estrategias omnicanal que combinan contenido orgánico, publicidad pagada y email marketing para nutrir leads y convertirlos en clientes leales.",
+        slug: "marketing-digital",
+        title: "Marketing Digital",
+        shortDescription: "Campañas de alto impacto que ponen tu mensaje frente a las personas correctas.",
         image: "https://images.unsplash.com/photo-1557838923-2985c318be48?q=75&w=1200&auto=format&fit=crop",
-        features: ["Gestión de Redes Sociales", "Publicidad Digital (Ads)", "SEO/SEM", "Email Marketing", "Analítica Web", "Consultoría Estratégica"],
-        benefits: ["Mayor alcance", "Leads cualificados", "ROI medible", "Fidelización de clientes"]
+        features: [
+            "Gestión de Redes Sociales",
+            "Publicidad Paid Media (Ads)",
+            "SEO & Marketing de Contenidos",
+            "Email Marketing Automatizado"
+        ],
+        longDescription: "El mejor producto del mundo no sirve de nada si nadie lo conoce. Utilizamos datos, creatividad y psicología del consumidor para poner tu marca en el mapa. Desde campañas de lanzamiento explosivas hasta estrategias de crecimiento sostenible (Growth Hacking), nos convertimos en tu departamento de marketing externo.",
+        benefits: [
+            "Retorno de inversión (ROI) medible.",
+            "Crecimiento constante de audiencia cualificada.",
+            "Presencia dominante en canales clave.",
+            "Datos y reportes transparentes mes a mes."
+        ],
+        process: [
+            { step: "01", title: "Análisis", desc: "Auditoría de canales y definición de KPIs." },
+            { step: "02", title: "Planificación", desc: "Estrategia de contenidos y funnel de ventas." },
+            { step: "03", title: "Ejecución", desc: "Lanzamiento de campañas y gestión diaria." },
+            { step: "04", title: "Optimización", desc: "Análisis de datos y mejora continua." }
+        ],
+        stats: [
+            { value: "5X", label: "Retorno (ROAS)" },
+            { value: "+10k", label: "Leads Generados" },
+            { value: "-40%", label: "Costo por Lead" }
+        ],
+        gallery: [
+            { image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&q=80", title: "Campaña Viral", category: "Social Media" },
+            { image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80", title: "SEO Growth", category: "Posicionamiento" },
+            { image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80", title: "Ads Performance", category: "Paid Media" }
+        ]
     },
     {
         id: 4,
         slug: "produccion-audiovisual",
         title: "Producción Audiovisual",
-        description: "Contamos tu historia en movimiento. Videos corporativos, comerciales y contenido para redes que detienen el scroll.",
-        fullDescription: "El video es el formato rey en internet. Producimos contenido audiovisual de alta calidad que captura la atención desde el primer segundo. Desde guionización hasta postproducción, nos encargamos de todo el proceso para entregar piezas únicas que elevan la percepción de tu marca.",
+        shortDescription: "Contenido visual cinematográfico para contar la historia de tu empresa.",
         image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=75&w=1200&auto=format&fit=crop",
-        features: ["Video Corporativo", "Fotografía de Producto", "Animación 2D/3D", "Edición y Postproducción", "Drones & Aéreas", "Reels & TikToks"],
-        benefits: ["Mayor engagement", "Comunicación efectiva", "Imagen profesional", "Contenido viralizable"]
-    },
-    {
-        id: 5,
-        slug: "desarrollo-software",
-        title: "Desarrollo de Software",
-        description: "Soluciones tecnológicas a medida. Desde aplicaciones móviles hasta plataformas web complejas para optimizar tu negocio.",
-        fullDescription: "Transformamos ideas complejas en software robusto y escalable. Ya sea que necesites una app móvil, un sistema de gestión interno o una plataforma e-commerce personalizada, nuestro equipo de ingenieros desarrolla soluciones a medida que impulsan la eficiencia y el crecimiento de tu negocio.",
-        image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=75&w=1200&auto=format&fit=crop",
-        features: ["Apps iOS/Android", "Desarrollo Full Stack", "E-commerce", "Integración de APIs", "Mantenimiento & Soporte", "Cloud Computing"],
-        benefits: ["Automatización de procesos", "Escalabilidad", "Seguridad de datos", "Ventaja competitiva"]
+        features: [
+            "Fotografía Corporativa",
+            "Video Promocional & Spots",
+            "Animación Motion Graphics",
+            "Cobertura de Eventos"
+        ],
+        longDescription: "En la era de la atención, el contenido visual es el rey. Contamos tu historia a través de lentes cinematográficos, capturando la esencia humana y profesional de tu negocio. Ya sea un video manifiesto emotivo o fotografía de producto de alta gama, elevamos la percepción de calidad de tu marca instantáneamente.",
+        benefits: [
+            "Estética visual de nivel cinematográfico.",
+            "Storytelling que conecta emocionalmente.",
+            "Contenido optimizado para redes sociales.",
+            "Diferenciación inmediata de la competencia."
+        ],
+        process: [
+            { step: "01", title: "Guionización", desc: "Desarrollo creativo y storyboards." },
+            { step: "02", title: "Rodaje", desc: "Producción con equipos 4K/6K cinema." },
+            { step: "03", title: "Edición", desc: "Montaje, color grading y diseño sonoro." },
+            { step: "04", title: "Entrega", desc: "Formatos optimizados para cada plataforma." }
+        ],
+        stats: [
+            { value: "4K", label: "Calidad Cinema" },
+            { value: "+80%", label: "Retención" },
+            { value: "Viral", label: "Potencial" }
+        ],
+        gallery: [
+            { image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80", title: "Spot TV", category: "Publicidad" },
+            { image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80", title: "Photoshoot", category: "Fotografía" },
+            { image: "https://images.unsplash.com/photo-1478720568477-152d9b164e63?w=800&q=80", title: "Event Coverage", category: "Eventos" }
+        ]
     }
 ];

@@ -34,7 +34,7 @@ export default function ServicesPage() {
             </section>
 
             {/* CTA FOOTER */}
-            <section className="py-20 text-center border-t border-white/10 bg-neutral-900">
+            <section className="py-20 text-center border-t border-white/10 bg-[#0B1121]">
                 <h2 className="text-3xl md:text-5xl font-bold mb-8">¿Tienes un proyecto en mente?</h2>
                 <a href="/#footer" className="bg-accent text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-black transition-all">
                     Cotizar Proyecto

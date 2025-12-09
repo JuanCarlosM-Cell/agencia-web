@@ -35,7 +35,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="w-full bg-white text-black py-32 px-6 md:px-20">
+    <section id="portfolio" className="w-full bg-[#0B1121] text-white py-32 px-6 md:px-20">
       <div className="max-w-[1400px] mx-auto">
 
         {/* CABECERA DE LA SECCIÓN */}
@@ -62,7 +62,7 @@ export default function Portfolio() {
               key={project.id}
               className={`
                 group relative overflow-hidden rounded-none cursor-pointer
-                ${project.size === "large" ? "md:col-span-2 aspect-[21/9]" : "md:col-span-1 aspect-[4/3]"}
+                ${project.size === "large" ? "md:col-span-2 aspect-[4/3] md:aspect-[21/9]" : "md:col-span-1 aspect-[4/3]"}
               `}
             >
               {/* IMAGEN CON ZOOM AL HOVER */}

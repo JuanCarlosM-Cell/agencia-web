@@ -23,11 +23,11 @@ export default function Home() {
 
       {/* CONTENIDO PRINCIPAL (Cortina) */}
       {/* Este contenido tiene z-index mayor y fondo para cubrir al Hero al subir */}
-      <div className="relative z-10 bg-white">
+      <div className="relative z-10 bg-[#0B1121]">
 
         <About />
 
-        <div className="bg-white"> {/* Wrapper para continuidad de fondo */}
+        <div className="bg-transparent"> {/* Wrapper para continuidad de fondo */}
           <div className="h-32"></div>
           <Services />
           <div className="h-32"></div>

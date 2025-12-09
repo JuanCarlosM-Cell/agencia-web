@@ -83,7 +83,7 @@ export default function Services() {
               key={service.id}
               className={`
                 group border-b border-white/20 py-10 cursor-pointer transition-all duration-300
-                ${activeService === index ? "pl-8 border-accent" : "hover:pl-4 hover:border-white/50"}
+                ${activeService === index ? "pl-8 border-accent bg-accent/10 shadow-[0_0_30px_rgba(42,128,247,0.15)]" : "hover:pl-4 hover:border-accent/40 hover:bg-transparent"}
               `}
               onMouseEnter={() => setActiveService(index)}
             >

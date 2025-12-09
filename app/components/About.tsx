@@ -50,12 +50,12 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="w-full bg-white text-black py-40 px-6 md:px-20 overflow-hidden min-h-screen flex items-center"
+      className="w-full bg-[#0B1121] text-white py-40 px-6 md:px-20 overflow-hidden min-h-screen flex items-center"
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
         {/* COLUMNA IZQUIERDA: TEXTO MANIFIESTO */}
-        <div className="relative z-10 pl-4 md:pl-0">
+        <div className="relative z-10 pl-6 md:pl-10 border-l-4 border-accent/20 hover:border-accent transition-colors duration-500">
 
           {/* LÍNEA 1 TITULO */}
           <div className="overflow-hidden">
@@ -85,12 +85,12 @@ export default function About() {
                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
              `}
           >
-            <p className="text-xl md:text-3xl text-gray-800 leading-normal font-light mb-16">
-              En un mundo saturado de ruido, ayudamos a que tu marca encuentre su propia voz.
-              Combinamos la <span className="font-medium text-accent">creatividad visual</span> con la precisión de los datos.
+            <p className="text-xl md:text-3xl text-gray-300 leading-normal font-light mb-16">
+              En un mundo saturado de ruido, ayudamos a que tu marca encuentre su <span className="text-accent font-medium">propia voz</span>.
+              Combinamos la <span className="font-bold text-accent">creatividad visual</span> con la precisión de los datos.
             </p>
 
-            <button className="flex items-center gap-6 text-lg font-bold uppercase tracking-widest hover:gap-8 transition-all duration-300 group">
+            <button className="flex items-center gap-6 text-lg font-bold uppercase tracking-widest hover:gap-8 transition-all duration-300 group text-accent">
               Nuestra Filosofía
               <span className="bg-black text-white w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
                 →
@@ -103,7 +103,7 @@ export default function About() {
         <div
           ref={imageRef}
           className={`
-            relative h-[700px] w-full overflow-hidden rounded-sm
+            relative h-[50vh] md:h-[700px] w-full overflow-hidden rounded-sm
             transition-all duration-[1.2s] delay-300 ease-out
             ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
           `}

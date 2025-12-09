@@ -63,7 +63,7 @@ export default function Access() {
               `}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 group-active:grayscale-0 group-focus:grayscale-0 transition-all duration-300">
+              <div className="text-4xl mb-6 text-accent group-hover:scale-110 transition-transform duration-300">
                 {tool.icon}
               </div>
 

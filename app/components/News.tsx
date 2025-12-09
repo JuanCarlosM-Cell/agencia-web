@@ -28,7 +28,7 @@ const articles = [
 
 export default function News() {
   return (
-    <section id="news" className="w-full bg-gray-50 text-black py-32 px-6 md:px-20">
+    <section id="news" className="w-full bg-[#0B1121] text-white py-32 px-6 md:px-20">
       <div className="max-w-[1400px] mx-auto">
 
         {/* CABECERA */}
@@ -56,7 +56,7 @@ export default function News() {
           {articles.map((article) => (
             <div
               key={article.id}
-              className="group cursor-pointer flex flex-col gap-6"
+              className="group cursor-pointer flex flex-col gap-6 hover:-translate-y-2 transition-transform duration-500"
             >
               {/* IMAGEN CARD */}
               <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
@@ -66,7 +66,7 @@ export default function News() {
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider">
+                <div className="absolute top-4 left-4 bg-accent text-white px-4 py-2 text-xs font-bold uppercase tracking-wider shadow-lg">
                   {article.category}
                 </div>
               </div>
