@@ -33,7 +33,7 @@ export default function Access() {
     <section
       ref={ref}
       id="access"
-      className="w-full bg-neutral-900 text-white py-32 px-6 md:px-20 overflow-hidden"
+      className="w-full bg-[#0F172A] text-white py-32 px-6 md:px-20 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto">
 

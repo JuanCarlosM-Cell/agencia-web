@@ -47,8 +47,9 @@ export default function Navbar({ forceWhite = false }: NavbarProps) {
 
           {/* LOGO */}
           <div className="relative z-50">
-            <a href="/#home" className={`text-2xl font-black tracking-tighter uppercase transition-colors duration-300`}>
-              Tu<span className="text-accent">Agencia</span>.
+            <a href="/#home" className="block w-40 md:w-48 transition-opacity duration-300 hover:opacity-90">
+              {/* Se asume que la imagen está en public/logo.jpg */}
+              <img src="/logo.jpg" alt="Agencia Logo" className="w-full h-auto object-contain" />
             </a>
           </div>
 

@@ -5,11 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #111111;
-  --accent: #D32F2F;
-  /* Rojo intenso y elegante */
+  --accent: #2A80F7;
+  /* Azul Corporativo 'Branding Emocion' */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', sans-serif;
-  /* Tipografía para títulos */
+
+  /* Nuevos Colores Corporativos Integrados */
+  --background-dark: #0F172A;
+  /* Slate 900 */
+  --background-secondary: #1E293B;
+  /* Slate 800 (para tarjetas) */
+  --accent-light: #60A5FA;
+  /* Azul más claro para hovers/detalles */
 }
 
 html,

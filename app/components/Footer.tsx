@@ -1,33 +1,27 @@
 "use client";
 
 import useScrollAnimation from "../hooks/useScrollAnimation";
+import ContactForm from "./ContactForm";
 
 export default function Footer() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <footer id="footer" className="w-full bg-black text-white mt-32">
+    <footer id="footer" className="w-full bg-[#0B1121] text-white mt-32 relative">
 
-      {/* CTA FINAL */}
-      <div className="px-6 md:px-20 py-32 text-center bg-black">
-        <h2 className="text-5xl md:text-6xl font-bold leading-tight">
-          ¿Listo para llevar tu marca al siguiente nivel?
-        </h2>
+      {/* GRADIENTE DE FONDO PARA SEPARAR VISUALMENTE */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-        <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
-          Conversemos y construyamos algo extraordinario juntos.
-        </p>
-
-        <button className="mt-10 bg-accent text-white px-12 py-4 rounded-full text-lg font-medium hover:bg-accent/80 transition">
-          Trabajemos juntos
-        </button>
+      {/* CONTACT FORM CONTAINER */}
+      <div className="px-6 md:px-20 py-20 bg-[#0B1121]">
+        <ContactForm />
       </div>
 
       {/* FOOTER CONTENT */}
       <section
         ref={ref}
         className={`
-          px-6 md:px-20 py-24 grid grid-cols-1 md:grid-cols-3 gap-16
+          px-6 md:px-20 py-12 grid grid-cols-1 md:grid-cols-3 gap-16 border-t border-white/10 bg-[#0F172A]/50
           transition-all duration-700
           ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
         `}
@@ -53,13 +47,12 @@ export default function Footer() {
             <li><a href="#services" className="hover:text-accent transition cursor-pointer">Servicios</a></li>
             <li><a href="#portfolio" className="hover:text-accent transition cursor-pointer">Portafolio</a></li>
             <li><a href="#news" className="hover:text-accent transition cursor-pointer">Noticias</a></li>
-            <li><a href="#footer" className="hover:text-accent transition cursor-pointer">Contacto</a></li>
           </ul>
         </div>
 
         {/* Columna 3 */}
         <div>
-          <h4 className="text-2xl font-semibold mb-4">Contáctanos</h4>
+          <h4 className="text-2xl font-semibold mb-4">Contacto Directo</h4>
           <ul className="flex flex-col gap-3 text-gray-400 text-lg">
             <li>📩 contacto@tuagencia.com</li>
             <li>📞 +51 999 999 999</li>
@@ -74,7 +67,7 @@ export default function Footer() {
       </section>
 
       {/* COPYRIGHT */}
-      <div className="border-t border-white/20 py-6 text-center text-gray-500 text-sm">
+      <div className="border-t border-white/10 py-6 text-center text-gray-500 text-sm bg-[#0B1121]">
         © {new Date().getFullYear()} TuAgencia. Todos los derechos reservados.
       </div>
     </footer>

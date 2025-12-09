@@ -3,53 +3,17 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
-
-const allServices = [
-    {
-        id: 1,
-        title: "Branding & Identidad",
-        description: "Creamos marcas con alma. Desde el logotipo hasta el sistema visual completo, definimos cómo se ve, habla y siente tu marca en cada punto de contacto.",
-        image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=75&w=1200&auto=format&fit=crop",
-        features: ["Logotipo & Isotipo", "Paleta de Colores", "Tipografía Corporativa", "Manual de Marca"]
-    },
-    {
-        id: 2,
-        title: "Diseño Web UI/UX",
-        description: "Diseñamos interfaces que enamoran y funcionan. Priorizamos la experiencia de usuario para garantizar navegación intuitiva y altos índices de conversión.",
-        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=75&w=1200&auto=format&fit=crop",
-        features: ["Diseño Web Responsivo", "Prototipado Interactivo", "Auditoría UX", "Sistemas de Diseño"]
-    },
-    {
-        id: 3,
-        title: "Estrategia Digital",
-        description: "No solo publicamos, conectamos. Desarrollamos estrategias de contenido y campañas de pago para poner tu marca frente a las personas correctas.",
-        image: "https://images.unsplash.com/photo-1557838923-2985c318be48?q=75&w=1200&auto=format&fit=crop",
-        features: ["Gestión de Redes Sociales", "Publicidad Digital (Ads)", "SEO/SEM", "Email Marketing"]
-    },
-    {
-        id: 4,
-        title: "Producción Audiovisual",
-        description: "Contamos tu historia en movimiento. Videos corporativos, comerciales y contenido para redes que detienen el scroll.",
-        image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=75&w=1200&auto=format&fit=crop",
-        features: ["Video Corporativo", "Fotografía de Producto", "Animación 2D/3D", "Edición y Postproducción"]
-    },
-    {
-        id: 5,
-        title: "Desarrollo de Software",
-        description: "Soluciones tecnológicas a medida. Desde aplicaciones móviles hasta plataformas web complejas para optimizar tu negocio.",
-        image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=75&w=1200&auto=format&fit=crop",
-        features: ["Apps iOS/Android", "Desarrollo Full Stack", "E-commerce", "Integración de APIs"]
-    }
-];
+import { allServices } from "../data/services";
 
 export default function ServicesPage() {
     return (
-        <main className="bg-black text-white min-h-screen">
+        <main className="bg-[#0b1121] text-white min-h-screen selection:bg-accent selection:text-white">
             <Navbar forceWhite={true} />
 
             {/* HERO SERVICIOS */}
-            <section className="pt-40 pb-20 px-6 md:px-20 bg-neutral-900 border-b border-white/10">
+            <section className="pt-40 pb-20 px-6 md:px-20 bg-gradient-to-b from-[#0F172A] to-[#0b1121] border-b border-white/5">
                 <div className="max-w-[1400px] mx-auto">
                     <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8">
                         Nuestros <span className="text-accent">Servicios</span>
@@ -61,7 +25,7 @@ export default function ServicesPage() {
             </section>
 
             {/* LISTA DETALLADA */}
-            <section className="px-6 md:px-20 py-20 bg-black">
+            <section className="px-6 md:px-20 py-20 bg-[#0b1121]">
                 <div className="max-w-[1400px] mx-auto flex flex-col gap-32">
                     {allServices.map((service, index) => (
                         <ServiceItem key={service.id} service={service} index={index} />
@@ -93,7 +57,7 @@ function ServiceItem({ service, index }: { service: any; index: number }) {
             ([entry]) => {
                 setIsInView(entry.isIntersecting);
             },
-            { threshold: 0.6 } // Se activa cuando el 60% del ítem está visible
+            { threshold: 0.4 }
         );
 
         if (ref.current) {
@@ -119,7 +83,7 @@ function ServiceItem({ service, index }: { service: any; index: number }) {
             </div>
 
             {/* CONTENIDO DEL SERVICIO */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start">
                 <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
                     <span className="text-accent text-lg font-bold">0{service.id}</span>
                     <div className="h-[1px] w-12 bg-accent"></div>
@@ -131,13 +95,21 @@ function ServiceItem({ service, index }: { service: any; index: number }) {
                 </p>
 
                 {/* Grid de Características */}
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {service.features.map((feature: string, i: number) => (
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full text-left">
+                    {service.features.slice(0, 4).map((feature: string, i: number) => (
                         <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-300">
                             <span className="text-accent">✓</span> {feature}
                         </li>
                     ))}
                 </ul>
+
+                <Link
+                    href={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-3 text-white border border-white/20 px-8 py-3 rounded-full hover:bg-accent hover:border-accent transition-all duration-300 group"
+                >
+                    Explorar Servicio
+                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                </Link>
             </div>
 
         </div>

@@ -55,14 +55,14 @@ export default function About() {
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
         {/* COLUMNA IZQUIERDA: TEXTO MANIFIESTO */}
-        <div className="relative z-10">
+        <div className="relative z-10 pl-4 md:pl-0">
 
           {/* LÍNEA 1 TITULO */}
           <div className="overflow-hidden">
             <h2 className={`
               block text-5xl md:text-8xl font-light leading-[1.1] tracking-tight
-              transition-all duration-[1.0s] ease-[cubic-bezier(0.25,1,0.5,1)]
-              ${isVisible ? "translate-y-0 opacity-100" : "translate-y-[110%] opacity-0"}
+              transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)]
+              ${isVisible ? "translate-y-0" : "translate-y-[110%]"}
             `}>
               No somos
             </h2>
@@ -72,8 +72,8 @@ export default function About() {
           <div className="overflow-hidden mb-12">
             <h2 className={`
               block text-5xl md:text-8xl font-bold leading-[1.1] tracking-tight pb-4
-              transition-all duration-[1.0s] delay-100 ease-[cubic-bezier(0.25,1,0.5,1)]
-              ${isVisible ? "translate-y-0 opacity-100" : "translate-y-[110%] opacity-0"}
+              transition-all duration-[1.2s] delay-150 ease-[cubic-bezier(0.16,1,0.3,1)]
+              ${isVisible ? "translate-y-0" : "translate-y-[110%]"}
             `}>
               otra agencia.
             </h2>
