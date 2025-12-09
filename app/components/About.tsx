@@ -91,7 +91,8 @@ export default function About() {
             src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=75&w=1200&auto=format&fit=crop"
             alt="Abstract Architecture"
             fill
-            className="object-cover transition-all duration-1000 ease-in-out grayscale hover:grayscale-0"
+            className="object-cover transition-all duration-1000 ease-in-out grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0"
+            tabIndex={0}
           />
 
           {/* Sutil overlay gradiente */}
