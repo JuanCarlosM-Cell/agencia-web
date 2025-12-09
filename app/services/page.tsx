@@ -3,6 +3,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Image from "next/image";
+import { useRef, useEffect, useState } from "react";
 
 const allServices = [
     {
@@ -82,7 +83,6 @@ export default function ServicesPage() {
 }
 
 // Componente individual para manejar la lógica de intersección por ítem
-import { useRef, useEffect, useState } from "react";
 
 function ServiceItem({ service, index }: { service: any; index: number }) {
     const ref = useRef<HTMLDivElement>(null);
