@@ -39,20 +39,25 @@ export default function Portfolio() {
       <div className="max-w-[1400px] mx-auto">
 
         {/* CABECERA DE LA SECCIÓN */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div>
-            <h2 className="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-4">
+        {/* CABECERA DE LA SECCIÓN */}
+        {/* CABECERA DE LA SECCIÓN: DISEÑO ASIMÉTRICO */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-24 border-b border-white/10 pb-12">
+          <div className="lg:col-span-7">
+            <span className="block text-accent font-bold tracking-[0.3em] uppercase mb-6 text-sm">
               Nuestro Trabajo
-            </h2>
-            <h3 className="text-5xl md:text-7xl font-bold leading-none">
-              Creando <br />
-              <span className="text-gray-400">Impacto.</span>
+            </span>
+            <h3 className="text-4xl md:text-7xl font-black leading-[0.9] text-white tracking-tighter">
+              CREANDO <br />
+              <span className="text-gray-700">IMPACTO.</span>
             </h3>
           </div>
 
-          <p className="max-w-md text-lg text-gray-600 leading-relaxed text-right md:text-left">
-            Una selección de proyectos donde la estrategia y el diseño colisionan para crear resultados extraordinarios.
-          </p>
+          <div className="lg:col-span-5 relative pb-2">
+            <div className="w-12 h-1 bg-accent mb-6"></div>
+            <p className="text-lg text-gray-400 leading-relaxed font-light">
+              Una selección de proyectos donde la <strong className="text-white font-bold">estrategia</strong> y el <strong className="text-white font-bold">diseño</strong> se fusionan para crear resultados que superan las expectativas.
+            </p>
+          </div>
         </div>
 
         {/* GRID ASIMÉTRICO */}
