@@ -50,7 +50,7 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="w-full bg-[#0B1121] text-white py-40 px-6 md:px-20 overflow-hidden min-h-screen flex items-center"
+      className="w-full bg-white text-black py-40 px-6 md:px-20 overflow-hidden min-h-screen flex items-center"
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
@@ -85,7 +85,7 @@ export default function About() {
                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
              `}
           >
-            <p className="text-xl md:text-3xl text-gray-300 leading-normal font-light mb-16">
+            <p className="text-xl md:text-3xl text-gray-600 leading-normal font-light mb-16">
               En un mundo saturado de ruido, ayudamos a que tu marca encuentre su <span className="text-accent font-medium">propia voz</span>.
               Combinamos la <span className="font-bold text-accent">creatividad visual</span> con la precisión de los datos.
             </p>

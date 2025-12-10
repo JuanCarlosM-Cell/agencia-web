@@ -10,7 +10,7 @@ export default function Access() {
     <section
       ref={ref}
       id="access"
-      className="w-full bg-[#0F172A] text-white py-32 px-6 md:px-20 overflow-hidden"
+      className="w-full bg-white text-black py-32 px-6 md:px-20 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto">
 
@@ -33,9 +33,9 @@ export default function Access() {
           {/* CARD 1 */}
           <div
             className={`
-                group relative bg-neutral-800/50 border border-white/10 p-10
-                hover:border-accent hover:bg-neutral-800 transition-all duration-500 cursor-pointer
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+                group relative bg-gray-50 border border-gray-200 p-10
+                hover:border-accent hover:bg-white transition-all duration-500 cursor-pointer
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} shadow-sm hover:shadow-xl
               `}
             style={{ transitionDelay: "0ms" }}
           >
@@ -50,10 +50,10 @@ export default function Access() {
             <h4 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
               Mis Leads
             </h4>
-            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+            <p className="text-gray-600 text-sm mb-8 leading-relaxed">
               Gestión de oportunidades en tiempo real.
             </p>
-            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
+            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-500 group-hover:text-black transition-colors">
               Ver Dashboard
               <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                 →
@@ -64,9 +64,9 @@ export default function Access() {
           {/* CARD 2 */}
           <div
             className={`
-                group relative bg-neutral-800/50 border border-white/10 p-10
-                hover:border-accent hover:bg-neutral-800 transition-all duration-500 cursor-pointer
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+                group relative bg-gray-50 border border-gray-200 p-10
+                hover:border-accent hover:bg-white transition-all duration-500 cursor-pointer
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} shadow-sm hover:shadow-xl
               `}
             style={{ transitionDelay: "150ms" }}
           >
@@ -81,10 +81,10 @@ export default function Access() {
             <h4 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
               Dominios
             </h4>
-            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+            <p className="text-gray-600 text-sm mb-8 leading-relaxed">
               Buscador y administrador de dominios.
             </p>
-            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
+            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-500 group-hover:text-black transition-colors">
               Buscar Ahora
               <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                 →
@@ -95,9 +95,9 @@ export default function Access() {
           {/* CARD 3 */}
           <div
             className={`
-                group relative bg-neutral-800/50 border border-white/10 p-10
-                hover:border-accent hover:bg-neutral-800 transition-all duration-500 cursor-pointer
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+                group relative bg-gray-50 border border-gray-200 p-10
+                hover:border-accent hover:bg-white transition-all duration-500 cursor-pointer
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} shadow-sm hover:shadow-xl
               `}
             style={{ transitionDelay: "300ms" }}
           >
@@ -112,10 +112,10 @@ export default function Access() {
             <h4 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
               Soporte VIP
             </h4>
-            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+            <p className="text-gray-600 text-sm mb-8 leading-relaxed">
               Línea directa con tu Project Manager.
             </p>
-            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
+            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-500 group-hover:text-black transition-colors">
               Contactar
               <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                 →

@@ -28,7 +28,7 @@ const articles = [
 
 export default function News() {
   return (
-    <section id="news" className="w-full bg-[#0B1121] text-white py-32 px-6 md:px-20">
+    <section id="news" className="w-full bg-white text-black py-32 px-6 md:px-20">
       <div className="max-w-[1400px] mx-auto">
 
         {/* CABECERA */}

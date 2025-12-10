@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* CONTENIDO PRINCIPAL (Cortina) */}
       {/* Este contenido tiene z-index mayor y fondo para cubrir al Hero al subir */}
-      <div className="relative z-10 bg-[#0B1121]">
+      <div className="relative z-10 bg-white">
 
         <About />
 

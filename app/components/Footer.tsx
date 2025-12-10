@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <div className="relative w-64 h-24 mb-6 mt-10">
             <Image
-              src="/logo.png"
+              src="/logo-new.png"
               alt="Branding Emoción Logo"
               fill
               className="object-contain"
@@ -56,13 +56,13 @@ export default function Footer() {
         <div>
           <h4 className="text-2xl font-semibold mb-4">Contacto Directo</h4>
           <ul className="flex flex-col gap-3 text-gray-400 text-lg">
-            <li>📩 contacto@tuagencia.com</li>
-            <li>📞 +51 999 999 999</li>
+            <li><span className="font-semibold text-white">Email:</span> contacto@tuagencia.com</li>
+            <li><span className="font-semibold text-white">Teléfono:</span> +51 999 999 999</li>
 
-            <li className="mt-6 flex gap-5 text-2xl">
-              <span className="cursor-pointer hover:text-accent transition">📘</span>
-              <span className="cursor-pointer hover:text-accent transition">📸</span>
-              <span className="cursor-pointer hover:text-accent transition">🎬</span>
+            <li className="mt-6 flex gap-5 text-lg">
+              <span className="cursor-pointer hover:text-accent transition hover:underline">Facebook</span>
+              <span className="cursor-pointer hover:text-accent transition hover:underline">Instagram</span>
+              <span className="cursor-pointer hover:text-accent transition hover:underline">LinkedIn</span>
             </li>
           </ul>
         </div>

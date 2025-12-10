@@ -35,27 +35,27 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="w-full bg-[#0B1121] text-white py-32 px-6 md:px-20">
+    <section id="portfolio" className="w-full bg-white text-black py-32 px-6 md:px-20">
       <div className="max-w-[1400px] mx-auto">
 
         {/* CABECERA DE LA SECCIÓN */}
         {/* CABECERA DE LA SECCIÓN */}
         {/* CABECERA DE LA SECCIÓN: DISEÑO ASIMÉTRICO */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-24 border-b border-white/10 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-24 border-b border-gray-200 pb-12">
           <div className="lg:col-span-7">
             <span className="block text-accent font-bold tracking-[0.3em] uppercase mb-6 text-sm">
               Nuestro Trabajo
             </span>
-            <h3 className="text-4xl md:text-7xl font-black leading-[0.9] text-white tracking-tighter">
+            <h3 className="text-4xl md:text-7xl font-black leading-[0.9] text-black tracking-tighter">
               CREANDO <br />
-              <span className="text-gray-700">IMPACTO.</span>
+              <span className="text-gray-400">IMPACTO.</span>
             </h3>
           </div>
 
           <div className="lg:col-span-5 relative pb-2">
             <div className="w-12 h-1 bg-accent mb-6"></div>
-            <p className="text-lg text-gray-400 leading-relaxed font-light">
-              Una selección de proyectos donde la <strong className="text-white font-bold">estrategia</strong> y el <strong className="text-white font-bold">diseño</strong> se fusionan para crear resultados que superan las expectativas.
+            <p className="text-lg text-gray-600 leading-relaxed font-light">
+              Una selección de proyectos donde la <strong className="text-black font-bold">estrategia</strong> y el <strong className="text-black font-bold">diseño</strong> se fusionan para crear resultados que superan las expectativas.
             </p>
           </div>
         </div>

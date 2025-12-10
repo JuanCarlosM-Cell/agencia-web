@@ -86,7 +86,7 @@ export default function Hero() {
         >
           <Link
             href="#services"
-            className="group flex items-center gap-4 bg-white text-black px-8 py-4 md:px-10 md:py-6 rounded-none md:rounded-sm hover:bg-accent hover:text-white transition-all duration-300 shadow-2xl"
+            className="group flex items-center gap-4 bg-white text-black px-8 py-4 md:px-10 md:py-6 rounded-none md:rounded-sm hover:bg-[var(--accent)] hover:text-white transition-all duration-300 shadow-2xl"
           >
             <span className="text-sm md:text-base font-bold uppercase tracking-[0.2em]">
               Conoce Nuestros Servicios

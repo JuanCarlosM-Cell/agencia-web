@@ -40,7 +40,7 @@ export default function Navbar({ forceWhite = false }: NavbarProps) {
         className={`
           fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out
           ${paddingClass}
-          ${"bg-[#0B1121]/95 backdrop-blur-md shadow-md"}
+          ${"bg-[#0B1121] shadow-md"}
           text-white
         `}
       >
@@ -51,7 +51,7 @@ export default function Navbar({ forceWhite = false }: NavbarProps) {
             {/* Reduced logo size as requested ("un poco chico") */}
             <a href="/#home" className="block w-20 md:w-28 transition-opacity duration-300 hover:opacity-90">
               {/* Se asume que la imagen está en public/logo.jpg */}
-              <img src="/logo-transparent.png" alt="Agencia Logo" className="w-full h-auto object-contain" />
+              <img src="/logo-new.png" alt="Agencia Logo" className="w-full h-auto object-contain" />
             </a>
           </div>
 
@@ -62,7 +62,7 @@ export default function Navbar({ forceWhite = false }: NavbarProps) {
                 <a href={item.href} className="block text-sm font-bold uppercase tracking-widest transition-transform duration-300 group-hover:-translate-y-full">
                   {item.name}
                 </a>
-                <a href={item.href} className="absolute top-full left-0 block text-sm font-bold uppercase tracking-widest text-accent transition-transform duration-300 group-hover:-translate-y-full">
+                <a href={item.href} className="absolute top-full left-0 block text-sm font-bold uppercase tracking-widest text-black transition-transform duration-300 group-hover:-translate-y-full">
                   {item.name}
                 </a>
               </li>
