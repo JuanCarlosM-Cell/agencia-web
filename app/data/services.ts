@@ -142,5 +142,42 @@ export const allServices = [
             { image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80", title: "Photoshoot", category: "Fotografía" },
             { image: "https://images.unsplash.com/photo-1478720568477-152d9b164e63?w=800&q=80", title: "Event Coverage", category: "Eventos" }
         ]
-    }
+    },
+    {
+    id: 5,
+    slug: "video-con-drone",
+    title: "Video con Drone",
+    shortDescription: "Tomas aéreas impactantes que elevan la percepción de tu marca y cuentan historias desde otra perspectiva.",
+    image: "/images/drone.jpg",
+    features: [
+        "Grabación Aérea en 4K",
+        "Fotografía Aérea Profesional",
+        "Videos Corporativos y Promocionales",
+        "Inspecciones y Tomas Técnicas"
+    ],
+    longDescription: "Las tomas aéreas generan impacto inmediato y transmiten escala, profesionalismo y modernidad. Utilizamos drones de última generación y pilotos certificados para capturar imágenes estables, cinematográficas y seguras. Desde proyectos inmobiliarios y eventos hasta videos corporativos y turísticos, llevamos tu contenido a otro nivel visual.",
+    benefits: [
+        "Mayor impacto visual y diferenciación.",
+        "Perspectivas únicas imposibles desde tierra.",
+        "Contenido ideal para redes sociales y publicidad.",
+        "Imagen moderna y tecnológica para tu marca."
+    ],
+    process: [
+        { step: "01", title: "Planificación", desc: "Definición de objetivos, locación y tomas clave." },
+        { step: "02", title: "Permisos", desc: "Evaluación de espacio aéreo y normativas." },
+        { step: "03", title: "Vuelo", desc: "Captura aérea con drones estabilizados en 4K." },
+        { step: "04", title: "Postproducción", desc: "Edición, color y entrega optimizada." }
+    ],
+    stats: [
+        { value: "4K", label: "Resolución Aérea" },
+        { value: "+70%", label: "Engagement Visual" },
+        { value: "100%", label: "Tomas Estabilizadas" }
+    ],
+    gallery: [
+        { image: "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?w=800&q=80", title: "Vista Aérea Corporativa", category: "Corporativo" },
+        { image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=80", title: "Proyecto Inmobiliario", category: "Inmobiliario" },
+        { image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80", title: "Evento Outdoor", category: "Eventos" }
+    ]
+}
+
 ];

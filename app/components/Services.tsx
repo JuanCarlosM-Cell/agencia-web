@@ -27,8 +27,15 @@ const services = [
     title: "Producción Audiovisual",
     description: "Contenido visual cinematográfico para contar la historia de tu empresa.",
     image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=75&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: 5,
+    title: "Video con Drone",
+    description: "Tomas aéreas en alta resolución que elevan la percepción de tu marca y generan impacto inmediato.",
+    image: "/images/drone.jpg"
   }
 ];
+
 
 export default function Services() {
   const [activeService, setActiveService] = useState(0);
