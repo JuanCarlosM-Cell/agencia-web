@@ -8,40 +8,86 @@ import { useRef, useEffect, useState } from "react";
 import { allServices } from "../data/services";
 
 export default function ServicesPage() {
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <main className="bg-white text-black min-h-screen selection:bg-accent selection:text-white antialiased">
+        <main className="bg-white text-black min-h-screen selection:bg-[#0B1C33] selection:text-white antialiased">
             <Navbar forceWhite={true} />
 
-            {/* HERO SERVICIOS - REDESIGN */}
-            <section className="relative pt-40 pb-32 px-6 md:px-20 overflow-hidden bg-white border-b border-gray-200">
-                {/* DOT PATTERN BACKGROUND */}
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-70"></div>
+            {/* HERO CON GRADIENTE Y ANIMACIONES */}
+            <section className="relative pt-40 pb-32 px-6 md:px-20 overflow-hidden min-h-[80vh] flex items-center">
+                {/* Background con gradiente animado */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0B1C33]/95 via-[#0B1C33]/90 to-[#1E3A8A]/80">
+                    {/* Formas geométricas animadas */}
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="absolute top-1/4 left-[10%] w-32 h-32 border-2 border-white/10 animate-spin-slow"></div>
+                        <div className="absolute bottom-1/4 right-[15%] w-40 h-40 border-2 border-white/15 rounded-full animate-pulse"></div>
+                        <div className="absolute top-[20%] right-[20%] w-24 h-24 border-4 border-white/20 rotate-45 animate-bounce-slow"></div>
+                        <div className="absolute bottom-[30%] left-[25%] w-48 h-48 border border-white/10 rounded-full animate-spin-slow"></div>
+                        
+                        {/* Líneas animadas */}
+                        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                        <div className="absolute top-0 left-1/2 h-full w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent animate-shimmer delay-1000"></div>
+                    </div>
+                    
+                    {/* Partículas sutiles */}
+                    <div className="absolute inset-0">
+                        {[...Array(15)].map((_, i) => (
+                            <div
+                                key={i}
+                                className="absolute w-1 h-1 bg-white/30 rounded-full"
+                                style={{
+                                    left: `${Math.random() * 100}%`,
+                                    top: `${Math.random() * 100}%`,
+                                    animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+                                    animationDelay: `${Math.random() * 2}s`
+                                }}
+                            />
+                        ))}
+                    </div>
+                </div>
 
-                {/* WATERMARK BACKGROUND TEXT */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none overflow-hidden">
-                    <span className="text-[12vw] md:text-[15vw] font-black text-gray-50 tracking-tighter leading-none whitespace-nowrap opacity-60">
-                        SERVICES
+                {/* Texto grande de fondo */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none">
+                    <span className="text-[12vw] md:text-[15vw] font-black text-white/10 tracking-tighter leading-none whitespace-nowrap">
+                        EXPERTISE
                     </span>
                 </div>
 
-                <div className="max-w-[1400px] mx-auto relative z-10 text-center">
-                    <div className="inline-block mb-4 px-4 py-1 rounded-full border border-black/10 bg-white/50 backdrop-blur-sm text-xs font-bold tracking-[0.2em] uppercase text-gray-500">
-                        Expertise & Soluciones
+                <div className="max-w-[1400px] mx-auto relative z-10 text-center w-full">
+                    <div className="inline-flex items-center gap-3 text-white/80 mb-8 font-bold uppercase tracking-widest text-sm">
+                        <span className="w-8 h-[2px] bg-white/60"></span>
+                        Soluciones Especializadas
                     </div>
 
-                    <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter mb-8 text-black leading-[0.9]">
-                        Nuestros <br />
-                        <span className="text-accent">Servicios</span>
+                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter mb-8 leading-[0.85]">
+                        <span className="bg-gradient-to-r from-white via-white/95 to-white/85 bg-clip-text text-transparent">
+                            Servicios
+                        </span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+                    {/* Línea decorativa */}
+                    <div className="relative w-full max-w-xs mx-auto mb-12">
+                        <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+                        <div className="absolute top-0 left-0 w-1/3 h-full bg-white animate-shimmer rounded-full"></div>
+                    </div>
+
+                    <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-3xl mx-auto leading-relaxed font-medium tracking-tight">
                         Soluciones integrales diseñadas para elevar tu marca en cada etapa de su crecimiento digital.
                     </p>
                 </div>
             </section>
 
-            {/* LISTA DETALLADA */}
-            <section className="px-6 md:px-20 py-20 bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]">
+            {/* LISTA DETALLADA CON FONDO DEGRADADO */}
+            <section className="px-6 md:px-20 py-24 bg-gradient-to-b from-white via-gray-50/50 to-white">
                 <div className="max-w-[1400px] mx-auto flex flex-col gap-32">
                     {allServices.map((service, index) => (
                         <ServiceItem key={service.id} service={service} index={index} />
@@ -49,12 +95,30 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* CTA FOOTER */}
-            <section className="py-20 text-center border-t border-gray-200 bg-gray-50">
-                <h2 className="text-3xl md:text-5xl font-bold mb-8">¿Tienes un proyecto en mente?</h2>
-                <a href="/#footer" className="bg-black text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-accent hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 inline-block">
-                    Cotizar Proyecto
-                </a>
+            {/* CTA FINAL MEJORADO */}
+            <section className="py-24 text-center bg-gradient-to-b from-white to-gray-50 relative overflow-hidden border-t border-gray-200">
+                <div className="absolute inset-0">
+                    <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#0B1C33]/10 to-[#1E3A8A]/10 rounded-full blur-3xl"></div>
+                    <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/10 to-[#0B1C33]/10 rounded-full blur-3xl"></div>
+                </div>
+
+                <div className="max-w-[1400px] mx-auto px-6 md:px-20 relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0B1C33]">
+                        ¿Listo para transformar tu proyecto?
+                    </h2>
+                    
+                    <p className="text-xl text-gray-800 mb-12 max-w-2xl mx-auto font-medium">
+                        Hablemos sobre cómo podemos llevar tu visión al siguiente nivel
+                    </p>
+                    
+                    <Link 
+                        href="/#footer" 
+                        className="inline-flex items-center gap-4 bg-gradient-to-r from-[#0B1C33] to-[#1E3A8A] text-white px-12 py-5 rounded-xl text-lg font-bold hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group"
+                    >
+                        <span>Iniciar Proyecto</span>
+                        <span className="transform group-hover:translate-x-2 transition-transform duration-300">→</span>
+                    </Link>
+                </div>
             </section>
 
             <Footer />
@@ -63,7 +127,6 @@ export default function ServicesPage() {
 }
 
 // Componente individual para manejar la lógica de intersección por ítem
-
 function ServiceItem({ service, index }: { service: any; index: number }) {
     const ref = useRef<HTMLDivElement>(null);
     const [isInView, setIsInView] = useState(false);
@@ -73,7 +136,7 @@ function ServiceItem({ service, index }: { service: any; index: number }) {
             ([entry]) => {
                 setIsInView(entry.isIntersecting);
             },
-            { threshold: 0.4 }
+            { threshold: 0.3 }
         );
 
         if (ref.current) {
@@ -86,55 +149,77 @@ function ServiceItem({ service, index }: { service: any; index: number }) {
     }, []);
 
     return (
-        <div ref={ref} className={`flex flex-col gap-12 text-center md:text-left ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-
+        <div 
+            ref={ref} 
+            className={`flex flex-col gap-12 md:gap-20 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center`}
+        >
             {/* IMAGEN DEL SERVICIO */}
-            <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-lg border border-gray-100">
+            <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-2xl border border-gray-300 hover:border-[#0B1C33] transition-all duration-500">
                 <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className={`object-cover transition-transform duration-700 group-hover:scale-110 ${isInView ? "grayscale-0" : "grayscale"} hover:grayscale-0`}
+                    className={`object-cover transition-transform duration-700 ${isInView ? "grayscale-0 scale-100 opacity-100" : "grayscale scale-95 opacity-90"} group-hover:scale-110 group-hover:grayscale-0`}
                 />
+                
+                {/* Overlay sutil */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C33]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
             {/* CONTENIDO DEL SERVICIO */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start border border-black rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 bg-white relative overflow-hidden">
-                {/* WATERMARK NUMBER */}
-                <span className="absolute -right-4 -bottom-10 text-[180px] font-black text-gray-50 opacity-50 select-none z-0 pointer-events-none leading-none">
+            <div className={`w-full md:w-1/2 flex flex-col justify-center border border-gray-300 rounded-2xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 bg-white relative overflow-hidden ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+                {/* Fondo decorativo con gradiente */}
+                <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-gradient-to-br from-[#0B1C33]/5 to-[#1E3A8A]/5 rounded-full blur-xl"></div>
+                
+                {/* Número decorativo */}
+                <span className="absolute -right-4 -bottom-10 text-[180px] font-black text-gray-100/50 select-none z-0 pointer-events-none leading-none">
                     0{service.id}
                 </span>
 
-                <div className="relative z-10 w-full">
-                    <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
-                        <span className="text-accent text-lg font-bold">0{service.id}</span>
-                        <div className="h-[1px] w-12 bg-accent"></div>
+                <div className="relative z-10">
+                    {/* Encabezado con número */}
+                    <div className="flex items-center gap-4 mb-8">
+                        <div className="w-12 h-12 bg-gradient-to-br from-[#0B1C33] to-[#1E3A8A] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            0{service.id}
+                        </div>
+                        <div className="h-[2px] w-16 bg-gradient-to-r from-[#0B1C33] to-transparent"></div>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black tracking-tight">{service.title}</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                    {/* Título */}
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0B1C33] tracking-tight">
+                        {service.title}
+                    </h2>
+                    
+                    {/* Descripción */}
+                    <p className="text-lg text-gray-700 leading-relaxed mb-10 font-medium">
                         {service.shortDescription}
                     </p>
 
-                    {/* Grid de Características */}
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full text-left">
+                    {/* Características en grid mejorado */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                         {service.features.slice(0, 4).map((feature: string, i: number) => (
-                            <li key={i} className="flex items-center gap-3 text-sm font-semibold text-gray-800">
-                                <span className="text-accent bg-accent/10 p-1 rounded-full">✓</span> {feature}
-                            </li>
+                            <div key={i} className="flex items-start gap-3 group/item">
+                                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-[#0B1C33] to-[#1E3A8A] rounded-full flex items-center justify-center text-white text-sm font-bold transform group-hover/item:scale-110 transition-transform duration-300">
+                                    ✓
+                                </div>
+                                <span className="text-gray-900 font-semibold text-sm leading-tight">
+                                    {feature}
+                                </span>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
 
+                    {/* Botón con gradiente */}
                     <Link
                         href={`/services/${service.slug}`}
-                        className="inline-flex items-center gap-3 text-black border-2 border-black px-10 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all duration-300 group shadow-md"
+                        className="inline-flex items-center gap-4 bg-gradient-to-r from-[#0B1C33] to-[#1E3A8A] text-white px-10 py-4 rounded-xl font-bold hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group/btn relative overflow-hidden"
                     >
-                        Explorar Servicio
-                        <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                        <span className="relative z-10">Explorar Servicio</span>
+                        <span className="relative z-10 transform group-hover/btn:translate-x-2 transition-transform duration-300">→</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A8A] to-[#0B1C33] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                     </Link>
                 </div>
             </div>
-
         </div>
     );
 }
